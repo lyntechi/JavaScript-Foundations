@@ -5,9 +5,9 @@
  value called name and give it the value of your own name.
 */
 
-// const principal = 200000;
-// const interestRate = 0.05;
-// const years = 30;
+// let principal = 200000;
+// let interestRate = 0.05;
+// let years = 30;
 // const name = 'lynda';
 
 
@@ -32,14 +32,33 @@ Hint: while these calculations can be done in one line, it might be helpful to c
 
 Hint #2: you'll need to use the `math` object for parts of this calculation!
 
-When your math is correct, monthlyRate will equal 1073.64
-*/
-// const monthlyRate;
-// const numerator = monthlyInterestRate * (Math.pow(1+monthlyInterestRate, periods));
-// const denominator = (Math.pow(1+monthlyInterestRate, periods)) -1;
+When your math is correct, monthlyRate will equal 1073.64*/
 
-// monthlyRate = principal * numerator / denominator;
-// console.log(monthlyRate)
+
+
+
+ 
+
+// let principal = 200000;
+// let interestRate = 0.05;
+// let years = 30;
+// const name = 'lynda';
+
+// let monthlyInterestRate = interestRate / 12;
+// let periods = years*12;
+
+
+// let numerator = monthlyInterestRate * (Math.pow(1+monthlyInterestRate,periods));
+// let denominator = (Math.pow(1+monthlyInterestRate,periods)) - 1;
+
+// const monthlyRate = (principal * numerator / denominator);
+
+
+// console.log(monthlyRate);
+
+
+
+
 
 // M = P [ I ( 1 + I )^N ] / [ ( 1 + I )^N – 1 ]
 
@@ -51,18 +70,27 @@ If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly 
 */
 
 // function mortgageCalculator() {
-//     const principal = 200000;
-//     const interestRate = 0.05;
-//     const years = 30;
+ 
+  
+
+//     let principal = 200000;
+//     let interestRate = 0.05;
+//     let years = 30;
 //     const name = 'lynda';
-//     const monthlyInterestRate = interestRate / 12;
-//     const periods = years*12;
-//     const numerator = monthlyInterestRate * (Math.pow(1 + monthlyInterestRate, periods));
-//     const denominator = (Math.pow(1 + monthlyInterestRate, periods)) - 1;
-//     const monthlyRate = principal * numerator / denominator;
-//     return (name + ' your monthly rate is ' + '$' + monthlyRate);
-//  }
-//  mortgageCalculator()
+    
+//     let monthlyInterestRate = interestRate / 12;
+//     let periods = years*12;
+    
+    
+//     let numerator = monthlyInterestRate * (Math.pow(1+monthlyInterestRate,periods));
+//     let denominator = (Math.pow(1+monthlyInterestRate,periods)) - 1;
+    
+//     const monthlyRate = (principal * numerator / denominator);
+//     return (name + " you're monthly rate is " + "$" + monthlyRate);
+    
+//      }
+//      mortgageCalculator();
+    
 
 
 
@@ -77,15 +105,16 @@ mortgageCalculator(200000, 0.05, 30); <-- should return 1,073.64
 
 // function mortgageCalculator(principal, interestRate, years) {
     
-//     const monthlyInterestRate = interestRate / 12;
-//     const periods = years*12;
-//     const numerator = monthlyInterestRate * (Math.pow(1 + monthlyInterestRate, periods));
-//     const denominator = (Math.pow(1 + monthlyInterestRate, periods)) - 1;
-//     const monthlyRate = principal * numerator / denominator;
-//     return monthlyRate;
-//  }
-//  mortgageCalculator(200000,0.05,30)
-
+//     let monthlyInterestRate = interestRate / 12;
+//     let periods = years*12;
+//     let numerator = monthlyInterestRate * (Math.pow(1 + monthlyInterestRate, periods));
+//     let denominator = (Math.pow(1 + monthlyInterestRate, periods)) - 1;
+//     let monthlyRate = principal * numerator / denominator;
+//     let rate = monthlyRate.toFixed(2);
+//     return rate;
+//   }
+ 
+//  console.log(mortgageCalculator(200000,0.05,30));
 
 
 
@@ -100,24 +129,36 @@ Then, add control flow within your function such that IF creditScore is above 74
 */
 
 
-function mortgageCalculator(principal, interestRate, years, creditScore) {
-    const monthlyInterestRate = interestRate / 12;
-    const periods = years * 12;
-    const numerator = monthlyInterestRate * (Math.pow(1 + monthlyInterestRate, periods));
-    const denominator = (Math.pow(1 + monthlyInterestRate, periods)) - 1;
-    const monthlyRate = principal * numerator / denominator;
-    if (creditScore > 740) {
-       monthlyInterestRate = (monthlyInterestRate - 0.0005);
-       return monthlyInterestRate;
-    }
-    else if (creditScore < 660) {
-        monthlyInterestRate = (monthlyInterestRate + 0.0005);
-        return monthlyInterestRate;
-    }
-    else {
-          return monthlyInterestRate;
-    }
-mortgageCalculator(200000, 0.05, 30, 740);
+
+// function mortgageCalculator(name, principal, interestRate, years, creditScore) {
+//     let monthlyInterestRate = interestRate / 12;
+//     let periods = years * 12;
+//     let numerator = monthlyInterestRate * (Math.pow(1 + monthlyInterestRate, periods));
+//     let denominator = (Math.pow(1 + monthlyInterestRate, periods)) - 1;
+//     let monthlyRate = principal * numerator / denominator;
+//     let rate = monthlyRate.toFixed(3);
+//     let highCreditScore = rate - 0.50;
+//     let lowCreditScore = rate + 0.50;
+
+    
+
+//     if (creditScore > 740) {
+    
+      
+//       return (name + " you're monthly rate is " + highCreditScore);
+       
+//     }
+//     else if (creditScore < 660) {
+      
+//         return (name + " you're monthly rate is " + lowCreditScore);
+        
+//     }
+//     else {
+//        return (name + " you're monthly rate is " + rate);
+//     }
+// }
+
+// console.log(mortgageCalculator('oscar', 200000, 0.05, 30, 700));
 
 
 
@@ -135,23 +176,49 @@ mortgageCalculator(200000, 0.05, 30, 740);
 
 
 
-// 🏡 Task 6: Loops
-/* Write a new function called variableInterestRate. This function should be the same as mortgageCalculator, except it 
-should console.log the monthly payment for 10 different interest rates at 0.5% increments plus or minus 2% from 
-the inputted interest rate. Complete these calculations using a for loop.
 
-For example, variableInterestRate(200000, 0.04, 30) should console.log:
 
-"{Name}, with an interest rate of 0.02, your monthly rate is $739"
-"{Name}, with an interest rate of 0.025, your monthly rate is $790"
-"{Name}, with an interest rate of 0.03, your monthly rate is $843"
-"{Name}, with an interest rate of 0.035, your monthly rate is $898"
-"{Name}, with an interest rate of 0.04, your monthly rate is $955"
-"{Name}, with an interest rate of 0.045, your monthly rate is $1013"
-"{Name}, with an interest rate of 0.05, your monthly rate is $1074"
-"{Name}, with an interest rate of 0.055, your monthly rate is $1136"
-"{Name}, with an interest rate of 0.06, your monthly rate is $1199"
-*/
+
+
+
+
+
+
+
+
+// // 🏡 Task 6: Loops
+// /* Write a new function called variableInterestRate. This function should be the same as mortgageCalculator, except it 
+// should console.log the monthly payment for 10 different interest rates at 0.5% increments plus or minus 2% from 
+// the inputted interest rate. Complete these calculations using a for loop.
+
+// For example, variableInterestRate(200000, 0.04, 30) should console.log:
+
+// "{Name}, with an interest rate of 0.02, your monthly rate is $739"
+// "{Name}, with an interest rate of 0.025, your monthly rate is $790"
+// "{Name}, with an interest rate of 0.03, your monthly rate is $843"
+// "{Name}, with an interest rate of 0.035, your monthly rate is $898"
+// "{Name}, with an interest rate of 0.04, your monthly rate is $955"
+// "{Name}, with an interest rate of 0.045, your monthly rate is $1013"
+// "{Name}, with an interest rate of 0.05, your monthly rate is $1074"
+// "{Name}, with an interest rate of 0.055, your monthly rate is $1136"
+// "{Name}, with an interest rate of 0.06, your monthly rate is $1199"
+// */
+
+
+//  function variableInterestRate (principal, interestRate, years){
+//    for (let i=0; i<10; i++ ){
+     
+//    }
+   
+//  }
+//  console.log(variableInterestRate(200000, 0.04, 30));
+
+
+
+
+
+
+
 
 
 

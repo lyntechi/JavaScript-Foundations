@@ -205,13 +205,29 @@ Then, add control flow within your function such that IF creditScore is above 74
 // */
 
 
-//  function variableInterestRate (principal, interestRate, years){
-//    for (let i=0; i<10; i++ ){
-     
-//    }
+
+// let monthlyInterestRate = interestRate / 12;
+//     let periods = years*12;
+//     let numerator = monthlyInterestRate * (Math.pow(1 + monthlyInterestRate, periods));
+//     let denominator = (Math.pow(1 + monthlyInterestRate, periods)) - 1;
+//     let monthlyRate = principal * numerator / denominator;
+//     let rate = monthlyRate.toFixed(2);
+
+ function variableInterestRate (principal, interestRate, years, name){
+
+        let variableRate = interestRate - .02;
+   for (let i=0; i<10; i++ ){
+        let periods = years*12;
+        let monthlyInterestRate = variableRate / 12;
+        let numerator = monthlyInterestRate * (Math.pow(1 + monthlyInterestRate, periods));
+        let denominator = (Math.pow(1 + monthlyInterestRate, periods)) - 1;
+        let monthlyRate = principal * numerator / denominator;
+        console.log(name + ", with an interest rate of " + variableRate.toFixed(3) + ", your monthly rate is " + monthlyRate.toFixed(2))
+        variableRate += .005 
+   }
    
-//  }
-//  console.log(variableInterestRate(200000, 0.04, 30));
+ }
+ variableInterestRate(200000, 0.04, 30, 'lynda');
 
 
 
